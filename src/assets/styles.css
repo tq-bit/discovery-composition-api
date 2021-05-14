@@ -4,10 +4,8 @@
   --primary-blur: rgba(70, 147, 200, 0.8);
   --secondary-blur: rgba(158, 77, 144, 0.8);
   --dark-base: #2d2d2d;
-  --bright: rgba(255, 255, 255);
   --gap-xs: 0.25rem;
   --gap-sm: 0.5rem;
-  --gap-md: 0.75rem;
   --gap-lg: 1rem;
   --gap-xl: 1.25rem;
 }
@@ -29,46 +27,19 @@ html {
   background-size: cover;
 }
 
+/* Wrapper for glassmorph - styling */
 .app-wrapper {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(20px);
   text-align: center;
-  margin: var(--gap-xl) auto ;
+  margin: var(--gap-xl) auto;
   -webkit-backdrop-filter: blur(20px);
   border-radius: var(--gap-xs);
   border: 1px solid rgba(255, 255, 255, 0.18);
   max-width: 600px;
 }
 
-.todo-header {
-  width: 350px;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-
-}
-
-.todo-input {
-  font-size: 1rem;
-}
-
-.todo-button {
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.todo-button:active {
-  background: rgba(255, 255, 255, 0.55);
-}
-
-.todo-list {
-  position: relative;
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  width: 350px
-}
-
+/* Applied to all child elements inside the glass */
 .todo-element {
   background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(20px);
@@ -79,12 +50,42 @@ html {
   transition: all 0.25s;
 }
 
-.todo-element:hover, .todo-element:focus  {
+.todo-element:hover,
+.todo-element:focus {
   background: rgba(255, 255, 255, 0.55);
 }
 
 .todo-element:focus {
   outline: none;
+}
+
+/* App header stylings */
+.todo-header {
+  width: 350px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+}
+
+.todo-input {
+  font-size: 1rem;
+}
+
+.todo-button {
+  cursor: pointer;
+}
+
+.todo-button:active {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* Todo - list styling */
+.todo-list {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 350px;
 }
 
 .todo-list-element {
@@ -105,11 +106,11 @@ html {
   opacity: 0.7;
 }
 
-.todo-list-element-done>h3 {
+.todo-list-element-done > p {
   text-decoration: line-through;
 }
 
 .todo-list-element-icon {
   cursor: pointer;
-  margin-left: var(--gap-sm)
+  margin-left: var(--gap-sm);
 }
