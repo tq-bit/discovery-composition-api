@@ -9,8 +9,9 @@
       v-for="todo in todoStateSorted"
       :key="todo"
       :item="todo"
-      @todo-done="toggleDone($event)"
-      @todo-delete="removeTodo($event)"
+      @todo-done="toggleDone(todo.id)"
+      @todo-delete="removeTodo(todo.id)"
+      @todo-edit="editTodo(todo.id, $event)"
     ></todo-item>
   </transition-group>
 </template>
@@ -28,18 +29,18 @@ export default {
       todoInputModel,
       todoCount,
       addTodo,
-      todoState,
-      todoStateSorted,
+      editTodo,
       removeTodo,
+      todoStateSorted,
       toggleDone,
     } = useTodos();
     return {
       todoInputModel,
       todoCount,
       addTodo,
-      todoState,
-      todoStateSorted,
+      editTodo,
       toggleDone,
+      todoStateSorted,
       removeTodo,
     };
   },

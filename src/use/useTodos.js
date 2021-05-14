@@ -23,10 +23,15 @@ export default function useTodos() {
     todoState.value[index].done = !todoState.value[index].done;
   };
 
+  const editTodo = (todoId, newTitle) => {
+    const index = findArrayIndexByItemId(todoState.value, todoId, 'id');
+    todoState.value[index].title = newTitle
+  }
+
   const removeTodo = (todoId) => {
     const index = findArrayIndexByItemId(todoState.value, todoId, 'id')
     todoState.value.splice(index, 1);
   };
 
-  return { todoInputModel, todoState, todoCount, removeTodo, toggleDone, addTodo, todoStateSorted };
+  return { todoInputModel, todoState, todoCount, editTodo, removeTodo, toggleDone, addTodo, todoStateSorted };
 }

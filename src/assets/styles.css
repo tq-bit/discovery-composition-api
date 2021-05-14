@@ -37,7 +37,8 @@ hr {
 
 h1.app-header {
   font-size: 1.5rem;
-  text-shadow:  0 0 1px #f2f2f2;
+  color: var(--dark-base);
+  text-shadow: 0 0 1px #f2f2f2;
 }
 
 /* Wrapper for glassmorph - styling */
@@ -111,6 +112,17 @@ h1.app-header {
 .todo-list-element-title {
   max-width: 275px;
   break-after: always;
+}
+
+.todo-input-edit {
+  border: none;
+  background: transparent;
+  padding: var(--gap-xs);
+  outline: 2px solid var(--glass-blur);
+}
+
+.todo-input-edit:focus {
+  outline: 2px solid var(--glass-base);
 }
 
 .todo-list-element-done {
