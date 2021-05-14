@@ -1,0 +1,74 @@
+:root {
+  --primary-color: rgba(70, 147, 200, 1);
+  --secondary-color: rgba(158, 77, 144, 1);
+  --primary-blur: rgba(70, 147, 200, 0.8);
+  --secondary-blur: rgba(158, 77, 144, 0.8);
+  --dark-base: #2d2d2d;
+  --bright: rgba(255, 255, 255);
+  --gap-xs: 0.25rem;
+  --gap-sm: 0.5rem;
+  --gap-md: 0.75rem;
+  --gap-lg: 1rem;
+  --gap-xl: 1.25rem;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom left,
+    var(--secondary-blur),
+    var(--primary-blur)
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.app-wrapper {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  text-align: center;
+  margin: var(--gap-xl) auto ;
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--gap-xs);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  max-width: 600px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 334px;
+}
+
+.todo-element {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: var(--gap-sm) var(--gap-lg);
+  border-radius: var(--gap-xs);
+  margin: var(--gap-sm);
+  transition: all 0.25s;
+}
+
+.todo-element:hover, .todo-element:focus  {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.todo-element:focus {
+  outline: none;
+}
+
+.todo-button {
+  font-weight: 600;
+}
+
+.todo-button:active {
+  background: rgba(255, 255, 255, 0.55);
+}
