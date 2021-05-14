@@ -3,7 +3,7 @@
     class="todo-element todo-list-element"
     :class="{ 'todo-list-element-done': item.done }"
   >
-    <h3 class="todo-list-element-title">{{ item.title }}</h3>
+    <p class="todo-list-element-title">{{ item.title }}</p>
     <footer class=".todo-list-element-icons">
       <span
         v-if="!item.done"

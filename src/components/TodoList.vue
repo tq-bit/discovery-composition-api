@@ -1,6 +1,8 @@
 <template>
-  <todo-input v-model="todoInputModel"></todo-input>
-  <todo-button @click="addTodo" label="Add to list"></todo-button>
+  <header class="todo-header">
+    <todo-input v-model="todoInputModel"></todo-input>
+    <todo-button @click="addTodo" label="Add to list"></todo-button>
+  </header>
   <transition-group tag="ul" class="todo-list" appear name="fade-move">
     <todo-item
       v-for="todo in todoStateSorted"

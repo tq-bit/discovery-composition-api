@@ -40,6 +40,27 @@ html {
   max-width: 600px;
 }
 
+.todo-header {
+  width: 350px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+
+}
+
+.todo-input {
+  font-size: 1rem;
+}
+
+.todo-button {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.todo-button:active {
+  background: rgba(255, 255, 255, 0.55);
+}
+
 .todo-list {
   position: relative;
   list-style: none;
@@ -54,7 +75,7 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: var(--gap-sm) var(--gap-lg);
   border-radius: var(--gap-xs);
-  margin: var(--gap-sm);
+  margin: var(--gap-sm) auto;
   transition: all 0.25s;
 }
 
@@ -75,6 +96,11 @@ html {
   justify-content: space-between;
 }
 
+.todo-list-element-title {
+  max-width: 275px;
+  break-after: always;
+}
+
 .todo-list-element-done {
   opacity: 0.7;
 }
@@ -86,12 +112,4 @@ html {
 .todo-list-element-icon {
   cursor: pointer;
   margin-left: var(--gap-sm)
-}
-
-.todo-button {
-  font-weight: 600;
-}
-
-.todo-button:active {
-  background: rgba(255, 255, 255, 0.55);
 }
