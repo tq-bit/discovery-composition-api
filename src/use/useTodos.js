@@ -6,10 +6,17 @@ export default function useTodos() {
     {
       id: "102-193",
       title: "Wash the dishes",
+      done: false
     },
     {
-      id: "102-194",
+      id: "102-195-193",
       title: "Do the chores",
+      done: false
+    },
+    {
+      id: "102-195-192",
+      title: "Do the chores",
+      done: true
     },
   ]);
 
@@ -25,7 +32,8 @@ export default function useTodos() {
   }
 
   const _createRandomId = () => {
-    return Math.ceil(Math.random() * 100 + "-" + Math.random() * 100)
+    const random = () => Math.floor(Math.random() * 999);
+    return `${random()}-${random()}-${random()}`
   }
 
   return { todoInputModel, todoState, todoCount, removeTodo, addTodo }
