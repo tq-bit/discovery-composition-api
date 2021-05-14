@@ -39,7 +39,7 @@ export default function useTodos() {
   };
 
   const removeTodo = (todoId) => {
-    const index = findArrayIndexByItemId(todoId)
+    const index = findArrayIndexByItemId(todoState.value, todoId, 'id')
     todoState.value.splice(index, 1);
   };
 
