@@ -3,23 +3,7 @@ import { findArrayIndexByItemId, createRandomId, sortByTrueProp } from '@/compos
 
 export default function useTodos() {
   const todoInputModel = ref("");
-  const todoState = ref([
-    {
-      id: "102-193",
-      title: "Wash the dishes",
-      done: false
-    },
-    {
-      id: "102-195-193",
-      title: "Do the chores",
-      done: false
-    },
-    {
-      id: "102-195-192",
-      title: "Do the chores",
-      done: true
-    },
-  ]);
+  const todoState = ref([]);
 
   const todoStateSorted = computed(() => {
     return sortByTrueProp(todoState.value, "done");
@@ -31,6 +15,7 @@ export default function useTodos() {
   const addTodo = () => {
     const id = createRandomId(999);
     todoState.value.push({ id, title: todoInputModel.value });
+    todoInputModel.value = ""
   };
 
   const toggleDone = (todoId) => {

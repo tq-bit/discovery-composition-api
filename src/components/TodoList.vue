@@ -1,6 +1,6 @@
 <template>
   <header class="todo-header">
-    <todo-input v-model="todoInputModel"></todo-input>
+    <todo-input @keydown.enter="addTodo" v-model="todoInputModel"></todo-input>
     <todo-button @click="addTodo" label="Add to list"></todo-button>
   </header>
   <hr>
