@@ -4,6 +4,8 @@
   --primary-blur: rgba(70, 147, 200, 0.8);
   --secondary-blur: rgba(158, 77, 144, 0.8);
   --dark-base: #2d2d2d;
+  --glass-base: rgba(255, 255, 255, 0.25);
+  --glass-blur: rgba(255, 255, 255, 0.18);
   --gap-xs: 0.25rem;
   --gap-sm: 0.5rem;
   --gap-lg: 1rem;
@@ -30,18 +32,24 @@ html {
 hr {
   width: 350px;
   margin: var(--gap-lg) auto;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--glass-blur);
+}
+
+h1.app-header {
+  font-size: 1.5rem;
+  text-shadow:  0 0 1px #f2f2f2;
 }
 
 /* Wrapper for glassmorph - styling */
 .app-wrapper {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(20px);
+  border-radius: var(--gap-xs);
+  border: 1px solid var(--glass-blur);
   text-align: center;
   margin: var(--gap-xl) auto;
+  padding: var(--gap-sm) var(--gap-lg);
   -webkit-backdrop-filter: blur(20px);
-  border-radius: var(--gap-xs);
-  border: 1px solid rgba(255, 255, 255, 0.18);
   max-width: 600px;
 }
 
@@ -49,7 +57,7 @@ hr {
 .todo-element {
   background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--glass-blur);
   padding: var(--gap-sm) var(--gap-lg);
   border-radius: var(--gap-xs);
   margin: var(--gap-sm) auto;
@@ -57,7 +65,8 @@ hr {
 }
 
 .todo-element:hover,
-.todo-element:focus {
+.todo-element:focus,
+.todo-button:active {
   background: rgba(255, 255, 255, 0.55);
 }
 
@@ -79,10 +88,6 @@ hr {
 
 .todo-button {
   cursor: pointer;
-}
-
-.todo-button:active {
-  background: rgba(255, 255, 255, 0.55);
 }
 
 /* Todo - list styling */
