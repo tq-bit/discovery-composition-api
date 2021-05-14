@@ -1,5 +1,5 @@
 import { ref, computed } from 'vue';
-import { findArrayIndexByItemId, createRandomId, sortByTrueProp } from '@/composable/utility.js'
+import { findArrayIndexByItemId, createRandomId, sortByTrueProp } from '@/composable/utility.js';
 
 export default function useTodos() {
   const todoInputModel = ref("");
@@ -21,25 +21,27 @@ export default function useTodos() {
     },
   ]);
 
-  const todoCount = computed(() => todoState.value.length)
   const todoStateSorted = computed(() => {
     return sortByTrueProp(todoState.value, "done");
-  })
+  });
+  const todoCount = computed(() => {
+    return todoState.value.length
+  });
 
   const addTodo = () => {
     const id = createRandomId(999);
     todoState.value.push({ id, title: todoInputModel.value });
-  }
+  };
 
   const toggleDone = (todoId) => {
     const index = findArrayIndexByItemId(todoState.value, todoId, 'id')
     todoState.value[index].done = !todoState.value[index].done;
-  }
+  };
 
   const removeTodo = (todoId) => {
     const index = findArrayIndexByItemId(todoId)
     todoState.value.splice(index, 1);
-  }
+  };
 
-  return { todoInputModel, todoState, todoCount, removeTodo, toggleDone, addTodo, todoStateSorted }
+  return { todoInputModel, todoState, todoCount, removeTodo, toggleDone, addTodo, todoStateSorted };
 }
