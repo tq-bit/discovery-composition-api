@@ -12,3 +12,8 @@ git add -A
 git commit -m 'deploy'
 git push -f git@github.com:tq-bit/discovery-composition-api.git master:gh-pages
 cd -
+
+git init
+git add -A
+git commit -m 'ref: updated gh pages'
+git push -f git@github.com:tq-bit/discovery-composition-api.git master
