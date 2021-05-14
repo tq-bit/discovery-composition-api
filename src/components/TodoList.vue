@@ -3,12 +3,9 @@
   <todo-button @click="addTodo" label="Add to list"></todo-button>
 
   <ul class="todo-list">
-    <todo-item
-      v-for="(todo, index) in todoState"
-      :key="todo"
-      :item="todo"
-      :index="index"
-    ></todo-item>
+    <div v-for="todo in todoStateSorted" :key="todo" >
+      <todo-item :item="todo" @todo-done="toggleDone($event)" @todo-delete="removeTodo($event)"></todo-item>
+    </div>
   </ul>
 </template>
 
@@ -26,9 +23,19 @@ export default {
       todoCount,
       addTodo,
       todoState,
+      todoStateSorted,
       removeTodo,
+      toggleDone,
     } = useTodos();
-    return { todoInputModel, todoCount, addTodo, todoState, removeTodo };
+    return {
+      todoInputModel,
+      todoCount,
+      addTodo,
+      todoState,
+      todoStateSorted,
+      toggleDone,
+      removeTodo,
+    };
   },
   components: {
     TodoInput,

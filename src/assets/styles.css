@@ -84,6 +84,7 @@ html {
 
 .todo-list-element-icon {
   cursor: pointer;
+  margin-left: var(--gap-sm)
 }
 
 .todo-button {
