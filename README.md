@@ -1,24 +1,7 @@
-# composition-api-test
+# Vue 3 composition API discovery
 
-## Project setup
-```
-npm install
-```
+This repository served ( and serves ) to discover the Vue 3 composition API magic.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+It represents a little crud - todo list that, instead of using Vue standard methods, is powered by composable functions.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[Demo on Github](https://tq-bit.github.io/discovery-composition-api/)
