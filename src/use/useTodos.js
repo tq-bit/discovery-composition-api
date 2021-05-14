@@ -21,20 +21,38 @@ export default function useTodos() {
   ]);
 
   const todoCount = computed(() => todoState.value.length)
+  const todoStateSorted = computed(() => {
+    return _sortByTrueProp(todoState.value, "done");
+  })
 
   const addTodo = () => {
-    const id = _createRandomId();
+    const id = _createRandomId(999);
     todoState.value.push({ id, title: todoInputModel.value });
   }
 
-  const removeTodo = (index) => {
+  const toggleDone = (todoId) => {
+    const index = _findArrayIndexByItemId(todoState.value, todoId, 'id')
+    todoState.value[index].done = !todoState.value[index].done;
+  }
+
+  const removeTodo = (todoId) => {
+    const index = _findArrayIndexByItemId(todoId)
     todoState.value.splice(index, 1);
   }
 
-  const _createRandomId = () => {
-    const random = () => Math.floor(Math.random() * 999);
+  // Util functions
+  const _findArrayIndexByItemId = (aItems, nItemId, sProp) => {
+    return aItems.findIndex(item => item[sProp] === nItemId);
+  }
+
+  const _createRandomId = (nMaxVal) => {
+    const random = () => Math.floor(Math.random() * nMaxVal);
     return `${random()}-${random()}-${random()}`
   }
 
-  return { todoInputModel, todoState, todoCount, removeTodo, addTodo }
+  const _sortByTrueProp = (aItems, sProp) => {
+    return aItems.sort((a, b) => a[sProp] === b[sProp] ? 0 : a[sProp] ? 1 : -1)
+  }
+
+  return { todoInputModel, todoState, todoCount, removeTodo, toggleDone, addTodo, todoStateSorted }
 }
