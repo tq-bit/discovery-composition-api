@@ -8,5 +8,5 @@ export const createRandomId = (nMaxVal) => {
 }
 
 export const sortByTrueProp = (aItems, sProp) => {
-  return aItems.sort((a, b) => a[sProp] === b[sProp] ? 0 : a[sProp] ? 1 : -1)
+  return aItems.sort((a, b) => a[sProp] && b[sProp] ? 0 : a[sProp] && !b[sProp] ? 1 : -1)
 }
