@@ -3,6 +3,7 @@
     <todo-input v-model="todoInputModel"></todo-input>
     <todo-button @click="addTodo" label="Add to list"></todo-button>
   </header>
+  <hr>
   <transition-group tag="ul" class="todo-list" appear name="fade-move">
     <todo-item
       v-for="todo in todoStateSorted"
